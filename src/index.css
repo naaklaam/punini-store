@@ -1,96 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Philosopher:ital,wght@0,400;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Genshin-inspired dark fantasy palette */
+    --background: 222 47% 8%;
+    --foreground: 45 30% 90%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222 40% 12%;
+    --card-foreground: 45 30% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 45% 10%;
+    --popover-foreground: 45 30% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Gold primary */
+    --primary: 43 65% 58%;
+    --primary-foreground: 222 47% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Deep blue secondary */
+    --secondary: 222 40% 18%;
+    --secondary-foreground: 45 30% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 222 30% 20%;
+    --muted-foreground: 220 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Purple accent */
+    --accent: 260 40% 50%;
+    --accent-foreground: 45 30% 95%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 45 30% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 222 30% 25%;
+    --input: 222 35% 18%;
+    --ring: 43 65% 58%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom Genshin colors */
+    --genshin-gold: 43 75% 55%;
+    --genshin-gold-light: 45 85% 70%;
+    --genshin-blue-dark: 222 50% 8%;
+    --genshin-blue: 222 45% 20%;
+    --genshin-purple: 260 35% 35%;
+    --genshin-purple-light: 265 45% 55%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(43 75% 45%), hsl(45 85% 65%), hsl(43 75% 45%));
+    --gradient-card: linear-gradient(180deg, hsl(222 45% 14%), hsl(222 50% 8%));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(43 75% 55% / 0.3), transparent 70%);
+    --gradient-border: linear-gradient(135deg, hsl(43 75% 55%), hsl(260 45% 55%), hsl(43 75% 55%));
+    
+    /* Shadows */
+    --shadow-gold: 0 0 20px hsl(43 75% 55% / 0.4);
+    --shadow-card: 0 8px 32px hsl(222 50% 5% / 0.8);
+    --shadow-glow: 0 0 40px hsl(43 75% 55% / 0.3);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 222 47% 8%;
+    --foreground: 45 30% 90%;
   }
 }
 
@@ -100,6 +72,148 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-philosopher antialiased;
+    background-image: 
+      radial-gradient(ellipse at 20% 20%, hsl(260 35% 15% / 0.3), transparent 50%),
+      radial-gradient(ellipse at 80% 80%, hsl(222 45% 15% / 0.4), transparent 50%),
+      linear-gradient(180deg, hsl(222 47% 6%), hsl(222 50% 10%));
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Fantasy border ornament */
+  .fantasy-border {
+    @apply relative;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--gradient-card)) padding-box,
+                linear-gradient(135deg, hsl(43 75% 55% / 0.6), hsl(260 45% 55% / 0.4), hsl(43 75% 55% / 0.6)) border-box;
+  }
+
+  .fantasy-border::before,
+  .fantasy-border::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid hsl(var(--genshin-gold));
+  }
+
+  .fantasy-border::before {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .fantasy-border::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+  }
+
+  /* Glow button effect */
+  .glow-button {
+    @apply relative overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, hsl(43 65% 45%), hsl(43 75% 55%));
+    box-shadow: 0 4px 15px hsl(43 75% 55% / 0.3);
+  }
+
+  .glow-button:hover {
+    box-shadow: 0 6px 25px hsl(43 75% 55% / 0.5), 0 0 40px hsl(43 75% 55% / 0.3);
+    transform: translateY(-2px);
+  }
+
+  .glow-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(45 85% 70% / 0.4), transparent);
+    transition: left 0.5s;
+  }
+
+  .glow-button:hover::before {
+    left: 100%;
+  }
+
+  /* Gold text gradient */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, hsl(43 65% 55%), hsl(45 85% 75%), hsl(43 65% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Card hover glow */
+  .card-glow {
+    @apply transition-all duration-300;
+  }
+
+  .card-glow:hover {
+    box-shadow: 0 0 30px hsl(43 75% 55% / 0.2), 0 8px 40px hsl(222 50% 5% / 0.6);
+    transform: translateY(-4px);
+  }
+
+  /* Atmospheric particles */
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .animate-float {
+    animation: float linear infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Ornamental divider */
+  .ornament-divider {
+    @apply relative flex items-center justify-center my-6;
+  }
+
+  .ornament-divider::before,
+  .ornament-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--genshin-gold) / 0.5), transparent);
+  }
+
+  .ornament-divider span {
+    @apply px-4 text-primary;
+  }
+}
+
+@layer utilities {
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-philosopher {
+    font-family: 'Philosopher', sans-serif;
   }
 }
